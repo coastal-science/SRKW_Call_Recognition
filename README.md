@@ -37,7 +37,7 @@ Experment obtained the following performance on mini-ImageNet, Omniglot, CUB-200
 |  MatchingNet  |    ConvNet   |   43.56±0.84   |   55.31± 0.73  |
 |    ProtoNet   |    ConvNet   |   49.42±0.78   |   68.20±0.66   |
 |      MAML     |    ConvNet   |   48.70±1.84   |   55.31±0.73   |
-|      DPGN     |    ConvNet   | **66.01±0.36** | **82.83±0.41** |
+|      DPGN     |    ConvNet   | 66.01±0.36 | 82.83±0.41 |
 
 
 
