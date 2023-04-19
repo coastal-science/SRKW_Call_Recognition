@@ -65,7 +65,9 @@ Experment obtained the following performance on mini-ImageNet, Omniglot, CUB-200
 
 |    Method   |   backbone   |  5way-1shot  |  5way-5shot  |
 |:-----------:|:------------:|:------------:|:------------:|
-|  MatchingNet|    ConvNet   |   43.56±0.84 |   55.31±0.73 |
-|    ProtoNet |    ConvNet   |   49.42±0.78 |   68.20±0.66 |
-|      MAML   |    ConvNet   |   48.70±1.84 |   55.31±0.73 |
-|      DPGN   |    ConvNet   |   66.01±0.36 |   82.83±0.41 |
+|  MatchingNet|    ConvNet   |   98.1		 |   98.9 |
+|    ProtoNet |    ConvNet   |   97.4 |   99.3 |
+|      MAML   |    ConvNet   |   98.7±0.4 |   99.9±0.3 |
+|      DPGN   |    ConvNet   |   99.2 |   99.7 |
+
+
