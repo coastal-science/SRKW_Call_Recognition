@@ -3,17 +3,13 @@
 This repository is Experment Code for Matching Network, ProtoNet, MAML and Distribution Propagation Graph Network
 
 ## Abstract
-Most graph-network-based meta-learning approaches model instance-level relation of examples. We extend this idea further to explicitly model the distribution-level relation of one example to all other examples in a 1-vs-N manner. We propose a novel approach named distribution propagation graph network (DPGN) for few-shot learning. It
-conveys both the distribution-level relations and instance-level relations in each few-shot learning task. To combine the distribution-level relations and instance-level relations
-for all examples, we construct a dual complete graph network which consists of a point graph and a distribution graph with each node standing for an example. Equipped
-with dual graph architecture, DPGN propagates label information from labeled examples to unlabeled examples within several update generations. In extensive experiments on
-few-shot learning benchmarks, DPGN outperforms state-of-the-art results by a large margin in 5% ∼ 12% under supervised settings and 7% ∼ 13% under semi-supervised settings.
+As an important branch of deep learning, few-shot Learning does not require a large amount of data but chooses a softer approach to solve problems, where it can be perfectly integrated with techniques such as meta learning and data augmentation. In this repository, I test four algorithms:Matching Network, ProtoNet, MAML and Distribution Propagation Graph NN on four FSL datasets: miniImageNet, Omniglot, CUB-200-2011 and CIFAR-FS.
 
 ## Requirements
 
 CUDA Version: 10.1
 
-Python : 3.5.2
+Python : 3.6.9
 
 To install dependencies:
 
@@ -23,12 +19,12 @@ sudo pip3 install -r requirements.txt
 ## Dataset
 For your convenience, you can download the datasets directly from links on the left, or you can make them from scratch following the original splits on the right. 
 
-|    Dataset    | Original Split |
+|    Dataset    | Algorithms Paper |
 | :-----------: |:----------------:|
 |  [Mini-ImageNet](https://drive.google.com/open?id=15WuREBvhEbSWo4fTr1r-vMY0C_6QWv4w)  |  [Matching Networks](https://arxiv.org/pdf/1606.04080.pdf)  | 
-|    [Tiered-ImageNet](https://drive.google.com/file/d/1nVGCTd9ttULRXFezh4xILQ9lUkg0WZCG)   |   [SSL](https://arxiv.org/abs/1803.00676)   |
-|  [CIFAR-FS](https://drive.google.com/file/d/1GjGMI0q3bgcpcB_CjI40fX54WgLPuTpS)  |   [R2D2](https://arxiv.org/pdf/1805.08136.pdf)   |
-|      [CUB-200-2011](https://github.com/wyharveychen/CloserLookFewShot/tree/master/filelists/CUB)     |   [Closer Look](https://arxiv.org/pdf/1904.04232.pdf)   |
+|    [Omniglot](https://drive.google.com/file/d/1nVGCTd9ttULRXFezh4xILQ9lUkg0WZCG)   |   [ProtoNet](https://arxiv.org/abs/1803.00676)   |
+|  [CIFAR-FS](https://drive.google.com/file/d/1GjGMI0q3bgcpcB_CjI40fX54WgLPuTpS)  |   [MAML](https://arxiv.org/pdf/1805.08136.pdf)   |
+|      [CUB-200-2011](https://github.com/wyharveychen/CloserLookFewShot/tree/master/filelists/CUB)     |   [DP GNN](https://arxiv.org/pdf/1904.04232.pdf)   |
 
 
 
@@ -40,29 +36,12 @@ Experment obtained the following performance on mini-ImageNet, Omniglot, CUB-200
 | :-----------: |:------------:|----------------|:--------------:|
 |  MatchingNet  |    ConvNet   |   43.56±0.84   |   55.31± 0.73  |
 |    ProtoNet   |    ConvNet   |   49.42±0.78   |   68.20±0.66   |
-|  RelationNet  |    ConvNet   |   50.44±0.82   |   65.32±0.70   |
 |      MAML     |    ConvNet   |   48.70±1.84   |   55.31±0.73   |
-|      GNN      |    ConvNet   |   50.33±0.36   |   66.41±0.63   |
-|      TPN      |    ConvNet   |   55.51±0.86   |   69.86±0.65   |
-|   Edge-label  |    ConvNet   |   59.63±0.52   |   76.34±0.48   |
-|    **DPGN**   |  **ConvNet** | **66.01±0.36** | **82.83±0.41** |
-|      LEO      |      WRN     |   61.76±0.08   |   77.59±0.12   |
-|      wDAE     |      WRN     |   61.07±0.15   |   76.75±0.11   |
-|    **DPGN**   |    **WRN**   | **67.24±0.51** | **83.72±0.44** |
-|   CloserLook  |   ResNet18   |   51.75±0.80   |   74.27±0.63   |
-|      CTM      |   ResNet18   |   62.05±0.55   |   78.63±0.06   |
-|    **DPGN**   | **ResNet18** | **66.63±0.51** | **84.07±0.42** |
-|    MetaGAN    |   ResNet12   |   52.71±0.64   |   68.63±0.67   |
-|     SNAIL     |   ResNet12   |   55.71±0.99   |   68.88±0.92   |
-|     TADAM     |   ResNet12   |   58.50±0.30   |   76.70±0.30   |
-|   Shot-Free   |   ResNet12   |   59.04±0.43   |   77.64±0.39   |
-| Meta-Transfer |   ResNet12   |   61.20±1.80   |   75.53±0.80   |
-|      FEAT     |   ResNet12   |   62.96±0.02   |   78.49±0.02   |
-|   MetaOptNet  |   ResNet12   |   62.64±0.61   |   78.63±0.46   |
-|    **DPGN**   | **ResNet12** | **67.77±0.32** | **84.60±0.43** |
+|      DPGN     |    ConvNet   | **66.01±0.36** | **82.83±0.41** |
 
 
-**Omniglot**:
+
+**CUB-200-2011**:
 
 |     Method    |   backbone   |   5way-1shot   |   5way-5shot   |
 | :-----------: |:------------:|----------------|:--------------:|
@@ -81,7 +60,7 @@ Experment obtained the following performance on mini-ImageNet, Omniglot, CUB-200
 |    **DPGN**   | **ResNet12** | **72.45±0.51** | **87.24±0.39** |
 
 
-**CUB-200-2011**:
+**CIFAR-FS**:
 
 |    Method   |   backbone   | 5way-1shot     |   5way-5shot   |
 |:-----------:|:------------:|----------------|:--------------:|
@@ -96,15 +75,11 @@ Experment obtained the following performance on mini-ImageNet, Omniglot, CUB-200
 |   **DPGN**  | **ResNet12** | **75.71±0.47** | **91.48±0.33** |
 
 
-**CIFAR-FS**:
+**Ominiglot**:
 
 |    Method   |   backbone   |  5way-1shot  |  5way-5shot  |
 |:-----------:|:------------:|:------------:|:------------:|
-|   ProtoNet  |    ConvNet   |   55.5±0.7   |   72.0±0.6   |
-|     MAML    |    ConvNet   |   58.9±1.9   |   71.5±1.0   |
-| RelationNet |    ConvNet   |   55.0±1.0   |   69.3±0.8   |
-|     R2D2    |    ConvNet   |   65.3±0.2   |   79.4±0.1   |
-|   **DPGN**  |  **ConvNet** | **76.4±0.5** | **88.4±0.4** |
-|  Shot-Free  |   ResNet12   |   69.2±0.4   |   84.7±0.4   |
-|  MetaOptNet |   ResNet12   |   72.0±0.7   |   84.2±0.5   |
-|   **DPGN**  | **ResNet12** | **77.9±0.5** | **90.2±0.4** |
+|  MatchingNet|    ConvNet   |   43.56±0.84 |   55.31±0.73 |
+|    ProtoNet |    ConvNet   |   49.42±0.78 |   68.20±0.66 |
+|      MAML   |    ConvNet   |   48.70±1.84 |   55.31±0.73 |
+|      DPGN   |    ConvNet   |   66.01±0.36 |   82.83±0.41 |
