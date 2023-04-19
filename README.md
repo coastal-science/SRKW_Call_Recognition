@@ -7,7 +7,7 @@ As an important branch of deep learning, few-shot Learning does not require a la
 
 ## Requirements
 
-CUDA Version: 10.1
+CUDA Version: 10.4
 
 Python : 3.6.9
 
