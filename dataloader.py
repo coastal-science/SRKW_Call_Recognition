@@ -58,54 +58,6 @@ class MiniImagenet(data.Dataset):
         return len(self.data)
 
 
-class TieredImagenet(data.Dataset):
-    def __init__(self, root, partition='train', category='tiered'):
-        super(TieredImagenet, self).__init__()
-
-        self.root = root
-        self.partition = partition
-        self.data_size = [3, 84, 84]
-
-        # set normalizer
-        mean_pix = [x/255.0 for x in [120.39586422, 115.59361427, 104.54012653]]
-        std_pix = [x/255.0 for x in [70.68188272, 68.27635443,  72.54505529]]
-
-        normalize = transforms.Normalize(mean=mean_pix, std=std_pix)
-
-        # set transformer
-        if self.partition == 'train':
-            self.transform = transforms.Compose([transforms.RandomCrop(84, padding=4),
-                                                 transforms.RandomHorizontalFlip(),
-                                                 transforms.ColorJitter(brightness=.1, contrast=.1, saturation=.1, hue=.1),
-                                                 lambda x: np.asarray(x),
-                                                 transforms.ToTensor(),
-                                                 normalize])
-        else:  # 'val' or 'test' ,
-            self.transform = transforms.Compose([lambda x: np.asarray(x),
-                                                 transforms.ToTensor(),
-                                                 normalize])
-        print('Loading {} ImageNet dataset -phase {}'.format(category, partition))
-        if category == 'tiered':
-            dataset_path = os.path.join(self.root, 'tiered-imagenet', '%s_images.npz' % self.partition)
-            label_path = os.path.join(self.root, 'tiered-imagenet', '%s_labels.pkl' % self.partition)
-            with open(dataset_path, 'rb') as handle:
-                self.data = np.load(handle)['images']
-            with open(label_path, 'rb') as handle:
-                label_ = pickle.load(handle)
-                self.labels = label_['labels']
-                self.label2ind = buildLabelIndex(self.labels)
-            self.full_class_list = sorted(self.label2ind.keys())
-        else:
-            print('No such category dataset')
-
-    def __getitem__(self, index):
-        img, label = self.data[index], self.labels[index]
-        image_data = pil_image.fromarray(img)
-        return image_data, label
-
-    def __len__(self):
-        return len(self.data)
-
 
 class Cifar(data.Dataset):
     """
