@@ -41,33 +41,37 @@ Experment obtained the following performance on mini-ImageNet, Omniglot, CUB-200
 
 
 
+
+
 **CUB-200-2011**:
 
 |     Method    |   backbone   |   5way-1shot   |   5way-5shot   |
 | :-----------: |:------------:|----------------|:--------------:|
-|  MatchingNet	|    ConvNet   |   43.56±0.84 	|   55.31±0.73 |
-|    ProtoNet 	|    ConvNet   |   49.42±0.78 	|   68.20±0.66 |
-|      MAML   	|    ConvNet   |   48.70±1.84 	|   55.31±0.73 |
-|      DPGN   	|    ConvNet   |   66.01±0.36 	|   82.83±0.41 |
+|  MatchingNet	|    ConvNet   |   61.16±0.89% 	|   72.86±0.7% |
+|    ProtoNet 	|    ConvNet   |   51.31±0.9% 	|   70.77±0.69% |
+|      MAML   	|    ConvNet   |   55.92±0.95% 	|   72.09±0.76% |
+|      DPGN   	|    ConvNet   |   76.05±0.51% 	|   89.08±0.38% |
+
+
 
 
 **CIFAR-FS**:
 
 |    Method   |   backbone   | 5way-1shot     |   5way-5shot   |
 |:-----------:|:------------:|----------------|:--------------:|
-|  MatchingNet|    ConvNet   |   43.56±0.84 |   55.31±0.73 |
-|    ProtoNet |    ConvNet   |   49.42±0.78 |   68.20±0.66 |
-|      MAML   |    ConvNet   |   48.70±1.84 |   55.31±0.73 |
-|      DPGN   |    ConvNet   |   66.01±0.36 |   82.83±0.41 |
+|  MatchingNet|    ConvNet   |   - |   - |
+|    ProtoNet |    ConvNet   |   55.5±0.7% |   68.20±0.66% |
+|      MAML   |    ConvNet   |   58.9±1.9% |   71.5±1.0% |
+|      DPGN   |    ConvNet   |   77.9±0.5% |   90.2±0.4% |
 
 
 **Ominiglot**:
 
 |    Method   |   backbone   |  5way-1shot  |  5way-5shot  |
 |:-----------:|:------------:|:------------:|:------------:|
-|  MatchingNet|    ConvNet   |   98.1		 |   98.9 |
-|    ProtoNet |    ConvNet   |   97.4 |   99.3 |
-|      MAML   |    ConvNet   |   98.7±0.4 |   99.9±0.3 |
-|      DPGN   |    ConvNet   |   99.2 |   99.7 |
+|  MatchingNet|    ConvNet   |   98.1%		 |   98.9% |
+|    ProtoNet |    ConvNet   |   97.4% |   99.3% |
+|      MAML   |    ConvNet   |   98.7±0.4% |   99.9±0.3% |
+|      DPGN   |    ConvNet   |   99.2% |   99.7% |
 
 
