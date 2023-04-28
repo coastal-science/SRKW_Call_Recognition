@@ -1,20 +1,16 @@
 Directory Information
 ---------------------
 
-- MatchNetwork/
-    The images organized in subdirectories based on species. See 
-    IMAGES AND CLASS LABELS section below for more info.
+- GraphNN/
+    The folder for The algorithms of Graph Neutral Network(Graph NN) implementation in Pytorch. See 
+    README for more info.
+
+- MAML/
+    The folder for The algorithms of Model-agnostic meta-learning (MAML) implementation in Pytorch. See README for more info.
 
 - MatchNetwork/
-    15 part locations per image. See PART LOCATIONS section below 
-    for more info.
-
-- MatchNetwork/
-    322 binary attribute labels from MTurk workers. See ATTRIBUTE LABELS 
-    section below for more info.
+    The folder for The algorithms of Match Network implementation in Pytorch. See README for more info.
 	
-- MatchNetwork/
-    322 binary attribute labels from MTurk workers. See ATTRIBUTE LABELS 
-    section below for more info.
-	
+- ProtoNet/
+	The folder for The algorithms of Prototypical Network implementation in Pytorch. See README for more info.
 		
