@@ -1,0 +1,20 @@
+Directory Information
+---------------------
+
+- MatchNetwork/
+    The images organized in subdirectories based on species. See 
+    IMAGES AND CLASS LABELS section below for more info.
+
+- MatchNetwork/
+    15 part locations per image. See PART LOCATIONS section below 
+    for more info.
+
+- MatchNetwork/
+    322 binary attribute labels from MTurk workers. See ATTRIBUTE LABELS 
+    section below for more info.
+	
+- MatchNetwork/
+    322 binary attribute labels from MTurk workers. See ATTRIBUTE LABELS 
+    section below for more info.
+	
+		
